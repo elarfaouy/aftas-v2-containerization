@@ -1,0 +1,53 @@
+<form id="form" [formGroup]="memberForm" (ngSubmit)="saveMember()">
+  <mat-form-field>
+    <mat-label>Num</mat-label>
+    <input type="number" matInput formControlName="num">
+    <div *ngIf="errorResponse?.errors?.['num']">
+      <mat-error>{{ errorResponse?.errors?.['num'] }}</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+    <div *ngIf="errorResponse?.errors?.['name']">
+      <mat-error>{{ errorResponse?.errors?.['name'] }}</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Family Name</mat-label>
+    <input matInput formControlName="familyName">
+    <div *ngIf="errorResponse?.errors?.['familyName']">
+      <mat-error>{{ errorResponse?.errors?.['familyName'] }}</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nationality</mat-label>
+    <input matInput formControlName="nationality">
+    <div *ngIf="errorResponse?.errors?.['nationality']">
+      <mat-error>{{ errorResponse?.errors?.['nationality'] }}</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Identity Number</mat-label>
+    <input matInput formControlName="identityNumber">
+    <div *ngIf="errorResponse?.errors?.['identityNumber']">
+      <mat-error>{{ errorResponse?.errors?.['identityNumber'] }}</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Identity Document</mat-label>
+    <mat-select formControlName="identityDocument">
+      <mat-option selected value="CIN">CIN</mat-option>
+      <mat-option value="CARTE_RESIDENCE">CARTE RESIDENCE</mat-option>
+      <mat-option value="PASSPORT">PASSPORT</mat-option>
+    </mat-select>
+    <div *ngIf="errorResponse?.errors?.['identityDocument']">
+      <mat-error>{{ errorResponse?.errors?.['identityDocument'] }}</mat-error>
+    </div>
+  </mat-form-field>
+
+  <div *ngIf="errorResponse?.message">
+    <mat-error>{{ errorResponse?.message }}</mat-error>
+  </div>
+  <button type="submit" mat-raised-button color="primary">submit</button>
+</form>

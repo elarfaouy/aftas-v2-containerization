@@ -1,0 +1,144 @@
+.badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-archived {
+  background-color: #8A8984;
+  color: #FFF;
+  border: 1px solid #4D4C48;
+}
+
+.badge-archived:before {
+  content: "\f187"; /* Archive icon */
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.badge-ongoing {
+  background-color: #F4511E;
+  color: #FFF;
+  border: 1px solid #E23E0F;
+  animation: flicker 1s ease-in-out infinite;
+}
+
+.badge-ongoing:before {
+  content: "\f06d"; /* Flame icon */
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.badge-upcoming {
+  background-color: #00B8F9;
+  color: #FFF;
+  border: 1px solid #00A1E9;
+}
+
+.badge-upcoming:before {
+  content: "\f135"; /* Rocket icon */
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.competition-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  gap: 10px;
+}
+
+.competition-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+  position: relative;
+}
+
+.competition-card.active {
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
+}
+
+.competition-card > h3 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted black;
+  font-weight: bold;
+}
+
+.fire-effect:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(255, 127, 0, 0.22));
+  opacity: 0.2;
+  animation: flicker 2s ease-in-out infinite;
+}
+
+.sky-effect:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 128, 255, 0.2), rgba(0, 191, 255, 0.14));
+  opacity: 0.3;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.card mat-card-title {
+  font-size: 1.3em;
+}
+
+.card mat-card-subtitle > p {
+  font-size: 1em;
+  display: inline;
+  margin-right: 40px;
+}
+
+.card mat-card-content {
+  margin-top: 15px;
+  font-size: 0.9em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

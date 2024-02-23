@@ -1,0 +1,64 @@
+.badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-archived {
+  background-color: #8A8984;
+  color: #FFF;
+  border: 1px solid #4D4C48;
+}
+
+.badge-archived:before {
+  content: "\f187"; /* Archive icon */
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.badge-ongoing {
+  background-color: #F4511E;
+  color: #FFF;
+  border: 1px solid #E23E0F;
+  animation: flicker 1s ease-in-out infinite;
+}
+
+.badge-ongoing:before {
+  content: "\f06d"; /* Flame icon */
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.badge-upcoming {
+  background-color: #00B8F9;
+  color: #FFF;
+  border: 1px solid #00A1E9;
+}
+
+.badge-upcoming:before {
+  content: "\f135"; /* Rocket icon */
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.table-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}

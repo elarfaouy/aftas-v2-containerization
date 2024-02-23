@@ -1,0 +1,25 @@
+.card{
+  margin-bottom: 50px;
+}
+.card mat-card-content {
+  margin-top: 15px;
+  font-size: 0.9em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+thead {
+  background-color: #eee;
+  font-weight: bold;
+}

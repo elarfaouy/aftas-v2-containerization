@@ -1,0 +1,50 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Competition Information :</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="competition">
+    <p>Code: {{ competition.code }}</p>
+    <p>Location: {{ competition.location }}</p>
+    <p>Date: {{ competition.date }}</p>
+    <p>Start Time: {{ competition.startTime }}</p>
+    <p>End Time: {{ competition.endTime }}</p>
+    <p>Amount: {{ competition.amount }}</p>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header class="participant-header">
+    <mat-card-title>Participants Hunting :</mat-card-title>
+    <button *ngIf="competition && competition.status == 'ONGOING'" style="margin-left: 20px" mat-raised-button color="primary" (click)="openBottomSheet()">Add Hunt</button>
+  </mat-card-header>
+  <mat-card-content class="panel" *ngIf="customHunts">
+    <mat-accordion *ngFor="let hunt of customHunts">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Num: {{ hunt.member?.num }}
+          </mat-panel-title>
+          <mat-panel-description>
+            <b>Member: </b> {{ hunt.member?.name }} {{ hunt.member?.familyName }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table>
+          <thead>
+          <th>fish</th>
+          <th>level</th>
+          <th>points</th>
+          <th>amount</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let hunting of hunt.hunts">
+            <td>{{ hunting.fish?.name }}</td>
+            <td>{{ hunting.fish?.level?.['code'] }}</td>
+            <td>{{ hunting.fish?.level?.['points'] }}</td>
+            <td>{{ hunting.numberOfFish }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-card-content>
+</mat-card>

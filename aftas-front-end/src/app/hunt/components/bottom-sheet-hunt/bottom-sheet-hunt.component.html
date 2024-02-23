@@ -1,0 +1,32 @@
+<form id="form" [formGroup]="huntForm" (ngSubmit)="saveHunt()">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Member</mat-label>
+    <input type="text" matInput [formControl]="memberControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFnForMember">
+      <mat-option *ngFor="let option of filteredMembers | async" [value]="option">
+        {{option.num}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Fish</mat-label>
+    <input type="text" matInput [formControl]="fishControl" [matAutocomplete]="autoFish">
+    <mat-autocomplete #autoFish="matAutocomplete" [displayWith]="displayFnForFish">
+      <mat-option *ngFor="let option of filteredFishes | async" [value]="option">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Fish Weight</mat-label>
+    <input type="number" min="0" matInput [formControl]="fishWeightControl">
+  </mat-form-field>
+
+  <div *ngIf="errorResponse?.message">
+    <mat-error>{{ errorResponse?.message }}</mat-error>
+  </div>
+  <button type="submit" mat-raised-button color="primary">submit</button>
+</form>

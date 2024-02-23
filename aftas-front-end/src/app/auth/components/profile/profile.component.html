@@ -1,0 +1,28 @@
+<div class="profile-container">
+  <div class="profile-content">
+    <div class="profile-details">
+      <div class="detail-group">
+        <label>ID:</label>
+        <span>{{ user.num }}</span>
+      </div>
+      <div class="detail-group">
+        <label>Full Name:</label>
+        <span>{{ user.name }} {{ user.familyName }}</span>
+      </div>
+      <div class="detail-group">
+        <label>Username:</label>
+        <span>{{ user.username }}</span>
+      </div>
+      <div class="detail-group">
+        <label>Role:</label>
+        <span>{{ user.role }}</span>
+      </div>
+      <div class="detail-group">
+        <label>Permissions:</label>
+        <ul>
+          <li *ngFor="let permission of user.permissions">{{ permission }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

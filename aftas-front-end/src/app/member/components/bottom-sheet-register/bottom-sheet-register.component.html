@@ -1,0 +1,27 @@
+<form id="form" [formGroup]="registerForm" (ngSubmit)="registerMemberToCompetition()">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Competition</mat-label>
+    <input type="text" matInput [formControl]="competitionControl" [matAutocomplete]="autoComp">
+    <mat-autocomplete #autoComp="matAutocomplete" [displayWith]="displayFnForCompetition">
+      <mat-option *ngFor="let option of filteredCompetitions | async" [value]="option">
+        {{option.code}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Member</mat-label>
+    <input type="text" matInput [formControl]="memberControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFnForMember">
+      <mat-option *ngFor="let option of filteredMembers | async" [value]="option">
+        {{option.num}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <div *ngIf="errorResponse?.message">
+    <mat-error>{{ errorResponse?.message }}</mat-error>
+  </div>
+  <button type="submit" mat-raised-button color="primary">submit</button>
+</form>

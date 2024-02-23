@@ -1,0 +1,19 @@
+<form id="form" [formGroup]="memberForm" (ngSubmit)="updateMember()">
+
+  <mat-form-field>
+    <mat-label>Member</mat-label>
+    <input matInput formControlName="num" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Role</mat-label>
+    <mat-select formControlName="role" required>
+      <mat-option *ngFor="let role of roles" [value]="role">{{ role.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="errorResponse?.message">
+    <mat-error>{{ errorResponse?.message }}</mat-error>
+  </div>
+  <button type="submit" mat-raised-button color="primary">submit</button>
+</form>

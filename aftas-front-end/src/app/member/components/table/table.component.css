@@ -1,0 +1,10 @@
+.table-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.table-title > div {
+  display: flex;
+  gap: 15px;
+}

@@ -1,0 +1,37 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Competition Information :</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="competition">
+    <p>Code: {{ competition.code }}</p>
+    <p>Location: {{ competition.location }}</p>
+    <p>Date: {{ competition.date }}</p>
+    <p>Start Time: {{ competition.startTime }}</p>
+    <p>End Time: {{ competition.endTime }}</p>
+    <p>Amount: {{ competition.amount }}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Competition Result :</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="scores">
+    <table>
+      <thead>
+      <th>#rank</th>
+      <th>score</th>
+      <th>name</th>
+      <th>family name</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let score of scores">
+        <td>{{ score.rank }}</td>
+        <td>{{ score.score }}</td>
+        <td>{{ score.member?.name }}</td>
+        <td>{{ score.member?.familyName }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

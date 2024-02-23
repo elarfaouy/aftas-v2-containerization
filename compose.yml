@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: aftas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+
+  spring-boot-app:
+    depends_on:
+      - postgres
+    build: ./aftas
+    ports:
+      - "8888:8888"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/aftas
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+
+  angular-app:
+    depends_on:
+      - spring-boot-app
+    build: ./aftas-front-end
+    ports:
+      - "4200:80"
+    

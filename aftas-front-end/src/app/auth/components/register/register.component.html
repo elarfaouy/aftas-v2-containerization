@@ -1,0 +1,29 @@
+<div class="container">
+  <div>
+    <h1>Register</h1>
+    <form id="register-form">
+      <div class="input-group">
+        <label for="num">User ID (num):</label>
+        <input type="number" id="num" name="num" required [(ngModel)]="num">
+      </div>
+      <div class="input-group">
+        <label for="name">First Name:</label>
+        <input type="text" id="name" name="name" required [(ngModel)]="name">
+      </div>
+      <div class="input-group">
+        <label for="familyName">Last Name:</label>
+        <input type="text" id="familyName" name="familyName" required [(ngModel)]="familyName">
+      </div>
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required [(ngModel)]="username">
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required [(ngModel)]="password">
+      </div>
+      <button type="submit" id="register-btn" (click)="register()">Register</button>
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+/* Overall container */
+.profile-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Content section */
+.profile-content {
+  display: flex;
+  justify-content: center;
+}
+
+/* Details section */
+.profile-details {
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Title */
+.profile-details h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Detail group */
+.detail-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Label */
+.detail-group label {
+  font-weight: bold;
+  width: 100px;
+}
+
+/* Value */
+.detail-group span {
+  flex: 1;
+}
+
+/* Permissions list */
+.detail-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detail-group li {
+  margin-bottom: 5px;
+}
+
+/* Customize colors and typography as desired */

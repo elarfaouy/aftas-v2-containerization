@@ -1,0 +1,20 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div id="side-bar">
+      <img class="logo" routerLink="/login" src="assets/images/Fish-logo.png">
+
+      <a color="primary" class="side-bar-button" mat-stroked-button routerLink="/competition">Competition</a>
+
+      <a color="primary" class="side-bar-button" mat-stroked-button routerLink="/member">Member</a>
+
+      <a color="primary" class="side-bar-button" mat-stroked-button routerLink="/hunt">Hunting</a>
+
+      <a color="primary" class="side-bar-button" mat-stroked-button routerLink="/profile">Profile</a>
+
+      <a color="warn" class="side-bar-button" mat-stroked-button (click)="logout()">Logout</a>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content id="main-content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
